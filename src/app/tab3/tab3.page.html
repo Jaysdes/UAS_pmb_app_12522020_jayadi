@@ -1,0 +1,142 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="text-align: center">
+    <!--Button Logout-->
+    <ion-buttons
+      class="logout"
+      routerLink="/login"
+      routerDirection="root"
+      lines="none"
+      detail="false"
+      routerLinkActive="selected"
+      slot="end"
+    >
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title style="text-align: center">
+      Form Penginputan Pendaftaran
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="background">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+    <!--Text box nama-->
+    <div class="inputBox">
+      <input [(ngModel)]="nama_mahasiswa" type="text" />
+      <span>Nama Lengkap :</span>
+    </div>
+    <br />
+    <!--ion list jenis kelamin-->
+    <ion-label style="margin-left: 40px; font-size: 15px; margin-bottom: 20px"
+      >Jenis Kelamin : </ion-label
+    ><br />
+    <div class="radio-input">
+      <input
+        [(ngModel)]="jenis_kelamin"
+        value="Laki-laki"
+        name="value-radio"
+        id="Laki-laki"
+        type="radio"
+      />
+      <label for="Laki-laki">Laki-laki</label>
+      <input
+        [(ngModel)]="jenis_kelamin"
+        value="Perempuan"
+        name="value-radio"
+        id="Perempuan"
+        type="radio"
+      />
+      <label for="Perempuan">Perempuan</label>
+    </div>
+    <!--Text box no_hp-->
+    <div class="inputBox">
+      <input [(ngModel)]="hp" />
+      <span>Nomor Handphone :</span>
+    </div>
+    <!--Text box email-->
+    <div class="inputBox">
+      <input [(ngModel)]="email" type="email" />
+      <span>E-mail :</span>
+    </div>
+    <!--Text box Asal Sekolah-->
+    <div class="inputBox">
+      <input [(ngModel)]="asal" />
+      <span>Asal Sekolah :</span>
+    </div>
+    <!--Select jurusan-->
+    <br />
+    <ion-label style="margin-left: 40px; font-size: 15px; margin-bottom: 20px"
+      >Jurusan :
+    </ion-label>
+    <select
+      [(ngModel)]="jurusan"
+      class="form-select sel"
+      style="width: 258px; margin-left: 38px"
+    >
+      <option value="Teknik Informatika">Teknik Informatika</option>
+      <option value="Sistem informasi">Sistem informasi</option>
+      <option value="Teknologi Informasi">Teknologi Informasi</option>
+    </select>
+    <!--Select jenjang-->
+    <br />
+    <ion-label style="margin-left: 40px; font-size: 15px; margin-bottom: 20px"
+      >Jenjang :
+    </ion-label>
+    <select
+      [(ngModel)]="jenjang"
+      class="form-select sel"
+      style="width: 258px; margin-left: 38px"
+    >
+      <option value="D3">D3</option>
+      <option value="S1">S1</option>
+      <option value="S2">S2</option>
+    </select>
+    <!--Select kelas-->
+    <br />
+    <ion-label style="margin-left: 40px; font-size: 15px; margin-bottom: 20px"
+      >Kelas :
+    </ion-label>
+    <select
+      [(ngModel)]="kelas"
+      class="form-select sel"
+      style="width: 258px; margin-left: 38px"
+    >
+      <option value="kelas A">kelas A</option>
+      <option value="Kelas B">Kelas B</option>
+      <option value="Kelas C">Kelas C</option>
+    </select>
+    <!--Select info-->
+    <br />
+    <ion-label style="margin-left: 40px; font-size: 15px; margin-bottom: 20px"
+      >Sumber info :
+    </ion-label>
+    <select
+      [(ngModel)]="info"
+      class="form-select sel"
+      style="width: 258px; margin-left: 38px"
+    >
+      <option value="mahasiswa">mahasiswa</option>
+      <option value="saudara">saudara</option>
+      <option value="teman">teman</option>
+      <option value="internet">internet</option>
+    </select>
+
+    <!--Foto-->
+
+    <ion-list-header>
+      <ion-label>Foto Calon Mahasiswa</ion-label></ion-list-header
+    >
+    <ion-item>
+      <input type="file" (change)="imageUpload($event)" />
+    </ion-item>
+    <br />
+    <!--Button submit dan reset-->
+
+    <ion-button class="bt" expand="block" (click)="addData()"
+      >Daftar</ion-button
+    >
+  </ion-card>
+  <br />
+</ion-content>

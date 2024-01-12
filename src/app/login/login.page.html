@@ -1,0 +1,73 @@
+<ion-header [translucent]="true"> </ion-header>
+<ion-content style="text-align: center">
+  <br />
+  <!-- grid1 -->
+  <ion-card class="card1">
+    <img
+      class="i1"
+      src="assets/img/unbin.png"
+      alt=""
+      width="150px"
+      height="150px"
+    />
+    <!-- log -->
+    <br />
+    <br />
+    <br />
+    <br />
+    <input type="checkbox" id="chk" aria-hidden="true" />
+    <div class="login">
+      <label for="chk" aria-hidden="true">Log in</label>
+      <div class="inputbox">
+        <input [(ngModel)]="npml" required="required" />
+        <span>NPM / E-mail</span>
+        <i></i>
+      </div>
+      <br />
+      <div class="inputbox">
+        <input [(ngModel)]="password" type="password" required="required" />
+        <span>Password</span>
+        <i></i>
+      </div>
+      <br /><br />
+      <button (click)="login()" class="pushable">
+        <span class="shadow"></span>
+        <span class="edge"></span>
+        <span class="front"> Log-in </span>
+      </button>
+    </div>
+    <!--Reg-->
+    <div class="register">
+      <label for="chk" aria-hidden="true">Register</label>
+      <input class="input" placeholder="npm" required="" [(ngModel)]="npm" />
+      <input
+        class="input"
+        type="email"
+        name="email"
+        placeholder="Email"
+        required=""
+        [(ngModel)]="email"
+      />
+      <input
+        class="input"
+        type="password"
+        name="pswd"
+        placeholder="Password"
+        required=""
+        [(ngModel)]="pass"
+      />
+      <input
+        class="input"
+        type="password"
+        name="pswd"
+        placeholder="Confirm Password"
+        required=""
+        [(ngModel)]="pass2"
+      />
+      <ion-button expand="block" color="primary" (click)="addData()"
+        >register</ion-button
+      >
+    </div></ion-card
+  >
+  <br />
+</ion-content>

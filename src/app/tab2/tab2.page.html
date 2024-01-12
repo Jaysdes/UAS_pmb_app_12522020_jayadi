@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  style="text-align: center;">
+    <!--Button Logout-->
+    <ion-buttons
+      class="logout"
+      routerLink="/login"
+      routerDirection="root"
+      routerLinkActive="selected"
+      slot="end"
+    >
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title> Pencairan Fee </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content slot="fixed" class="background" [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+   <!--timeline -->
+  <div class="container">
+    <div class="timeline">
+      <div class="timeline-month">
+        <b>Alur Pencairan Fee</b>
+      </div>
+      <div class="timeline-section">
+        <div class="timeline-date">
+          Data Pendaftaran
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="timeline-box">
+              <div class="box-content">
+                <div class="box-item"><strong>Pengecekan nominal fee pendaftaran</strong> dapat di cek melalui menu
+                  <b>Data Pendaftaran</b></div>
+              </div>
+              <div class="box-footer">Pastikan terdapat jumlah fee pendaftaran</div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="timeline-section">
+        <div class="timeline-date">
+       Konformasi ke bagian BAUM
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="timeline-box">
+              <div class="box-content">
+                <div class="box-item"><strong>BAUM,</strong>Silahkan anda untuk konfirmasi dengan mnunjukan daftar data pendaftaran dengan status
+                  <strong>"Verifikasi Pendaftaran OK"</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      
+      <div class="timeline-section">
+        <div class="timeline-date">
+         Proses pencairan fee selesai
+        </div>
+      </div>
+    <button class="cr"  routerLink="/tabs/tab2"
+      routerDirection="root"
+      routerLinkActive="selected">
+      <ion-icon style="height: 15px;" name="time-outline"></ion-icon>
+    </button>
+  </div>
+  <br>

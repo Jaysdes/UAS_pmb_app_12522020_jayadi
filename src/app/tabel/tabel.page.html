@@ -1,0 +1,98 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--Button Logout-->
+    <ion-buttons
+      class="btn"
+      routerLink="/login"
+      routerDirection="root"
+      lines="none"
+      detail="false"
+      routerLinkActive="selected"
+      slot="end"
+    >
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-buttons>
+    <ion-buttons
+      class="btn"
+      routerLink="/tabs/tab4"
+      routerDirection="root"
+      lines="none"
+      detail="false"
+      routerLinkActive="selected"
+      slot="start"
+    >
+      <ion-icon name="return-up-back-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Daftar Calon Mahasiswa Mendaftar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <br />
+  <swiper-container
+    #swiperEX
+    initial-slide="0"
+    [autoplay]="false"
+    [keyboard]="true"
+    [scrollbar]="{draggable:true}"
+  >
+    <swiper-slide>
+      <table class="table table-striped tb">
+        <thead>
+          <tr class="t1">
+            <th scope="col">No</th>
+            <th scope="col">Nama Lengkap</th>
+            <th scope="col">Jenis_kelamin</th>
+            <th scope="col">Nomor Hp</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Asal sekolah</th>
+            <th scope="col">Jurusan</th>
+            <th scope="col">Jenjang</th>
+            <th scope="col">Kelas</th>
+            <th scope="col">Info</th>
+            <th scope="col">Foto_mahasiswa</th>
+            <th scope="col">Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody style="text-align: center">
+          <tr *ngFor="let data of allData">
+            <td scope="row">{{data.kd}}</td>
+            <td>{{data.nama_mahasiswa}}</td>
+            <td>{{data.jenis_kelamin}}</td>
+            <td>{{data.no_hp}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.asal_sekolah}}</td>
+            <td>{{data.jurusan}}</td>
+            <td>{{data.jenjang}}</td>
+            <td>{{data.kelas}}</td>
+            <td>{{data.info}}</td>
+            <td>
+              <img
+                src="{{data.foto_siswa}}"
+                style="width: 60px; height: 60px; margin-left: 5px"
+              />
+            </td>
+            <td><p>{{ pesan }}</p></td>
+            <td>
+              <ion-button color="primary" (click)="getDataMahasiswa(data.kd)"
+                ><ion-icon slot="icon-only" name="pencil"></ion-icon
+              ></ion-button>
+            </td>
+
+            <td>
+              <ion-button color="danger" (click)="deleteData(data.kd)"
+                ><ion-icon slot="icon-only" name="trash"></ion-icon
+              ></ion-button>
+            </td>
+          </tr>
+        </tbody></table
+    ></swiper-slide>
+    <swiper-slide></swiper-slide><swiper-slide></swiper-slide
+    ><swiper-slide></swiper-slide>
+  </swiper-container>
+</ion-content>

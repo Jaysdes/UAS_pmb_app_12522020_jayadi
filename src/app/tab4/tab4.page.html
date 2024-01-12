@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar style="text-align: center">
+    <!--Button Logout-->
+    <ion-buttons
+      class="logout"
+      routerLink="/login"
+      routerDirection="root"
+      routerLinkActive="selected"
+      slot="end"
+    >
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title>Data Calon Mahasiswa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content slot="fixed" class="background" [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-row *ngFor="let mahasiswa of mahasiswaData;">
+    <ion-item-sliding>
+      <ion-item>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 4;
+            margin-top: 15px;
+            margin-bottom: 15px;
+          "
+        >
+          <img
+            src="{{mahasiswa.foto_siswa}}"
+            style="width: 60px; height: 60px; margin-right: 2px"
+          />
+          <ion-col>{{mahasiswa.npm}} </ion-col>
+          <ion-col size="10">{{mahasiswa.nama_mahasiswa}}</ion-col>
+        </div>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option
+          color="primary"
+          (click)="getDataMahasiswa(mahasiswa.kd)"
+        >
+          <ion-icon slot="icon-only" name="pencil"></ion-icon>
+          Edit
+        </ion-item-option>
+
+        <ion-item-option color="danger" (click)="deleteData(mahasiswa.kd)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-row>
+  <ion-list class="l1"
+    ><ion-icon
+      style="margin-right: 5px; margin-top: 2px"
+      name="play-back-outline"
+    ></ion-icon>
+    <ion-label>Slide ke kiri untuk Edit / Delete Data</ion-label>
+  </ion-list>
+  <br />
+  <ion-button
+    class="b1"
+    expand="block"
+    routerLink="/tabel"
+    routerDirection="root"
+    lines="none"
+    detail="false"
+    routerLinkActive="selected"
+    color="primary"
+    >Data Calon Mahasiswa</ion-button
+  >
+  <br />
+</ion-content>

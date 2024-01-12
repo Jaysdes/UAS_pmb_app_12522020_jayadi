@@ -1,0 +1,106 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  style="text-align: center;">
+    <!--Button Logout-->
+    <ion-buttons
+      class="logout"
+      routerLink="/login"
+      routerDirection="root"
+      routerLinkActive="selected"
+      slot="end"
+    >
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-buttons>
+    <ion-title> INFo PMB </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content slot="fixed" class="background" [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!--timeline -->
+  <div class="container">
+    <div class="timeline">
+      <div class="timeline-month">
+        <b>Informasi Alur PMB</b>
+      </div>
+      <div class="timeline-section">
+        <div class="timeline-date">
+          Pendaftaran
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="timeline-box">
+              <div class="box-content">
+                <div class="box-item"><strong>Kegiatan Pendaftaran</strong>Dapat dilakukan pada tanggal 
+                  <b>tanggal 2 januari s/d 31 agustus 2022</b></div>
+              </div>
+              <div class="box-footer">Biaya Pendaftaran sebesar Rp.300.000,00.</div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="timeline-section">
+        <div class="timeline-date">
+         Mengikuti Tes Potensi Akademik Dan Wawancara
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="timeline-box">
+              <div class="box-content">
+                <div class="box-item"><strong>Tes Potensi Akademik (TPA)</strong>Kegiatan ini dilakukan untuk mengetahui kompetensi pengetahuan umum dimana ada 3 jenis pertanyaan diantaranya adalah pertanyaaan 
+                  <b>logika,matematika dan umum,</b><strong>TPA</strong> dilakukan menggunakan berbasis komputer yang diselenggarakan offline/onlilne. 
+                  <strong>Wawancara</strong> Kegiatan ini dilakukan untuk mengetahui minat dan bakat calon mahasiswa.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+      
+      <div class="timeline-section">
+        <div class="timeline-date">
+          Pengumuman Hasil TPA dan melakukan Daftar Ulang
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="timeline-box">
+              <div class="box-content">
+                <div class="box-item"><strong>Kegiatan Daftar Ulang</strong> Bisa dilakukan <b>Online</b> atau <b>Offline</b></div>
+              </div>
+              <div class="box-footer">Setelah ada pengumumman pengenai lolos atau tidaknya terhadap nilai TPA, maka calon mahasiswa yang 
+                <b>dinyatakan lolos</b> bisa langsung melakukan kegiatan <b>daftar ulang.</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-section">
+        <div class="timeline-date">
+         Melakukan kegiatan Pra-studi
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="timeline-box">
+              <div class="box-content">
+                <div class="box-item"><strong>Pelaksanaan kegiatan Pra-sudi</strong> Di laksanakan di lokasi</div>
+              </div>
+              <div class="box-footer">Fakulitas ekonomi dan komputer di laksanakan di 
+                <b>Gedung kampus Pajajaran</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <button class="cr"  routerLink="/tabs/tab2"
+      routerDirection="root"
+      routerLinkActive="selected">
+      <ion-icon style="height: 15px;" name="time-outline"></ion-icon>
+    </button>
+  </div>
+  <br>
+  <!---->
+  
+</ion-content>
